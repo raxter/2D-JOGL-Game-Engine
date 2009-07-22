@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="jogl-1.1.1-windows-i586/lib/gluegen-rt.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="AsteroidGame/jogl-1.1.1-windows-i586/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="jogl-1.1.1-windows-i586/lib/jogl.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="AsteroidGame/jogl-1.1.1-windows-i586/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="src/game/game.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,129 @@
+get the instruction from ubuntu forums about setting the right compiler so eclipse's compiler doesn't take over (which can't seem to run JOGL) 
+    NOTE: TSL already seems to have the right compiler and JOGL compiles, must still test if it runs
+
+DONE Change around GameFrame so that students have ability to add widgets etc
+
+DONE: have multiple renering windows available... hmm ...lots of work ... maybe not
+    DONE... not really planned but it's done
+        Runs two separate games tho, must either make the timer sync up or advise not to use multiple frames
+            Will advise not to use 2 or more frames
+
+DONE Take out GLrotation and replace with multi-textured rotations (one for every 5 degree's or whatever)
+    DONE Taken out rotations
+    DONE multiple textures added
+
+DONE Package up game java files so they can see each other but not outside classes
+
+DONE GameObject class need to be reworked
+    Just adding on functions as needed
+
+DONE enable double buffering
+
+DONE make offset for drawing pane (for following around ship etc)
+
+DONE do proper cleanup of textures in GameObject class
+
+DONE fix centering of images for subImages
+
+DONE Add asteroids
+
+***************FOR DEMO*********************
+
+DONE Split up AsteroidGame and GameObject classes into separate files
+
+DONE Make asteroids move
+DONE Make asteroids break up
+
+DONE Make sure, you don't start on top of an asteroid
+    Well... students can do this
+
+DONE Plan lecture
+    Things to mention:
+        The game loop
+            Have to run doTimestep for each unit in logicStep()
+            Have to run draw for each unit in render step
+        The Game class and GameCanvas. Adding widgets and not adding two GameCanvas's to the same window
+        GameObject and it's subclasses
+            Textures, subtextures and multi-textures
+        isKeyDown() and the control interface
+        
+        The 4 parts of the prac
+            A specification
+            B Collision detection (show code)
+            C Features and content (textures and add a quick fun feature)
+                Mention that features include anything that makes the game playing experiance more rewarding/fun - i.e. menus, saving all help
+            D AI - pathfinding - refresh grid every few seconds
+
+DONE Clean up code
+
+DONE Limit speed
+	Added friction
+
+DONE Draw [line pixel quad triangle] array? () functions
+
+DONE do basic collision detection system
+    DONE bounding box
+    DONE bit test ?
+        DONE Get access to image bufferw
+
+***************FOR ALPHA*********************
+
+DONE Abstract away game package so students only see .class files
+	DONE or just jar them
+
+COMMENTING! dear goodness I need to do commenting and documentation :(
+	DONE How to
+	DONE JavaDocs :(
+	DONE Bug reporting
+	Revision
+	   DONE Update uncommented methods and classes
+	   Mention that really large textures should be loaded up as multiple smaller ones
+
+DONE Make GameDrawer class for renderStep (like TextureLoader for the inintStep)
+
+DONE Fonts
+
+***************FOR BETA*********************
+
+DONE Colour tinting and fading out/transparency
+
+DONE Abstract GL gl in renderStep away from student
+
+DONE Abstract texture loading into some sort of TextureLoader class passed to intiStep()
+
+Fix concurrentModification exception that crops up :(
+	cant replicate this
+
+DONE Make sure students can't hack their way into the Game package :)
+    This is not doable really, will instruct students not to do this
+
+DONE Make asteroids blow off in non-random directions using physics 'n stuff
+    Maybe leave this? It's doable but would add a lot of extra code (don't want to scare of the students now...)
+
+DONE Control Interface
+    DONE Keyboard
+    DONE Mouse, mousemotion
+    DONE MouseWheel
+    
+DONE Do Eclipse version
+	TEST Make compatible for command line users
+	TEST Windows XP
+	
+DONE add debug tools
+	DONE draw bounding box
+	   well they can draw it themselves
+
+DONE Add scaling to the fonts, add getStringwidth for determining stringwidth
+
+**************FOR FINAL*******************
+
+Fix funny little bar the shows up at bottom of AsteroidTexture
+
+MAYBE DONE Textures
+    BROKEN, must fix (just that one bug loading power of 2 square pictures)
+        FIXED... maybe, depends on the mipmap problem :/
+
+make fullscreenable (?)
+
+fix mipmap blocky background problem
+    Can't replicate problem ??
