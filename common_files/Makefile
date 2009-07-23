@@ -7,15 +7,15 @@ JAR_FILE=2DGame_1.2.jar
 all: jar docs
 
 jar: bytecode
-	cd src/2DGame/ && jar cf $(JAR_FILE) *.class && cd ../.. || cd ../..
+	cd src/2DGame/ && jar cf $(JAR_FILE) GameEngine/*.class && cd ../.. || cd ../..
 	mkdir jar ; mv src/2DGame/$(JAR_FILE) jar/$(JAR_FILE)
 	#$(ENV) $(JAVACMD) src/*.java
 	
 docs:
-	javadoc -d docs src/2DGame/*.java -classpath $(LIBCLASSFILES)
+	javadoc -d docs src/2DGame/GameEngine/*.java -classpath $(LIBCLASSFILES)
 	
 bytecode:
-	$(ENV) $(JAVACMD) src/2DGame/*.java
+	$(ENV) $(JAVACMD) src/2DGame/GameEngine/*.java
   
 	
 #src/*.class: src/*.java

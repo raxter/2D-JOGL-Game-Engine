@@ -1,7 +1,6 @@
 *~
-common_files/src/2DGame/*.class
+*.class
 common_files/jar
 common_files/doc
 
-*linux
-*windows
+output/
