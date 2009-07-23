@@ -1,6 +1,6 @@
 *~
 *.class
-common_files/jar
-common_files/doc
+common_files/jar/
+common_files/doc/
 
 output/
