@@ -1,6 +1,6 @@
-package game;
 
-import game.GameObject;
+
+import GameEngine.GameObject;
 import java.awt.geom.*;
 
 /**

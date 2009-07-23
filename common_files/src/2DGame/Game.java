@@ -1,7 +1,8 @@
-package game;
+package GameEngine;
 
 import java.util.Stack;
 import javax.media.opengl.*;
+
 import com.sun.opengl.util.texture.*;
 import java.io.*;
 import javax.swing.*;
@@ -67,6 +68,8 @@ public abstract class Game {
     boolean mouseDragged = false;
     boolean mouseMoved = false;
     Point mousePos = new Point(0,0);
+
+    Dimension viewPortDimension = new Dimension(1,1);
     
     boolean [] keyTypedVec = new boolean [512];
     Stack<Integer> keyTypedStack = new Stack<Integer>();
@@ -250,7 +253,7 @@ public abstract class Game {
             * @param x The x-offset
             * @param y The y-offset
             */
-        public void setOffsets(float x, float y){
+        public void setWorldOffset(float x, float y){
         offx = x; offy = y;
         }
         
@@ -725,9 +728,19 @@ public abstract class Game {
     
     synchronized void updateMousePos(int x, int y) {
         mousePos.x = x;
-        mousePos.y = y;
+        mousePos.y = this.viewPortDimension.height-y;
     }
     
+
+    synchronized void setViewPortDimension(Dimension dimension) {
+    	this.viewPortDimension = new Dimension(dimension);
+    }
+
+	public Dimension getViewportDimension() {
+		
+		return new Dimension(viewPortDimension);
+	}
+	
     // we need to push the keyTyped and mouseClicked events to a stack so that they can be undone at the end of the logic step
     // it is a hell of a lot more eficient then clearing all 512 boolean values in my opinion
     synchronized void registerKeyTyped(int keyCode) {
@@ -785,6 +798,5 @@ public abstract class Game {
             }
         });
     }
-    
     //==============================================================================
 }

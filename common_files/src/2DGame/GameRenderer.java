@@ -1,7 +1,9 @@
-package game;
+package GameEngine;
 
 import javax.media.opengl.*;
 import javax.media.opengl.glu.*;
+
+
 import com.sun.opengl.util.j2d.*;
 
 import java.util.*;
@@ -119,6 +121,8 @@ class GameRenderer implements GLEventListener
     
   Game game;
   FontRenderer f;
+
+  Dimension viewPortDimension = new Dimension(1,1);
     //==============================================================================
     
   public GameRenderer (Game g) {
@@ -166,6 +170,7 @@ class GameRenderer implements GLEventListener
     
   public void reshape(GLAutoDrawable drawable, int x, int y, int width, int height)  {
     System.out.println("GameRenderer.reshape("+x+", "+y+", "+width+", "+height+") called");
+	game.setViewPortDimension(new Dimension(width, height));
     GL gl = drawable.getGL(); 
     GLU glu = new GLU(); 
         

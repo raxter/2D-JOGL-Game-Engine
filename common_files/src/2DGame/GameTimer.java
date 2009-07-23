@@ -1,7 +1,9 @@
-package game;
+package GameEngine;
+
 
 import javax.media.opengl.*;
 
+import GameEngine.Game;
 
 class GameTimer extends Thread
 {

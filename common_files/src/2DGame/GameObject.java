@@ -1,4 +1,5 @@
-package game;
+package GameEngine;
+
 
 import java.util.Vector;
 import java.awt.*;
@@ -36,8 +37,8 @@ public class GameObject {
     private boolean markedForDestruction = false;
     
     //TODO combine texture and center into a nested class
-    private Vector<GameTexture> texture = new Vector<GameTexture>();
-    private Vector<Point2D.Float> center = new Vector<Point2D.Float>();
+    private Vector<GameTexture> textures = new Vector<GameTexture>();
+    private Vector<Point2D.Float> centers = new Vector<Point2D.Float>();
     int activeTexture = -1;
     
     TextureCoords tc;
@@ -63,8 +64,57 @@ public class GameObject {
     }
     
     public void finalize() {
-        while (!texture.isEmpty())
+        while (!textures.isEmpty())
             removeTexture(0);
+    }
+    
+
+    /**
+     * Returns the angle between this GameObject and another
+     *
+     * @param o The GameObject to get the angle from
+     * @return Then angle in degrees
+     */
+    public float getDegreesTo(GameObject o) {
+    	
+    	return getDegreesTo(o.position);
+    }
+    
+
+    /**
+     * Returns the angle between this GameObject and another
+     *
+     * @param o The GameObject to get the angle from
+     * @return Then angle in radians
+     */
+    public float getRadiansTo(GameObject o) {
+    	
+    	return getRadiansTo(o.position);
+    }
+    
+
+
+    /**
+     * Returns the angle between this GameObject and a point
+     *
+     * @param o The point to get the angle from
+     * @return Then angle in degrees
+     */
+    public float getDegreesTo(Point2D.Float o) {
+    	
+    	return (float)Math.toDegrees(getRadiansTo(o));
+    }
+    
+
+    /**
+     * Returns the angle between this GameObject and a point
+     *
+     * @param o The point to get the angle from
+     * @return Then angle in radians
+     */
+    public float getRadiansTo(Point2D.Float o) {
+    	
+    	return (float)Math.atan2((o.y - position.y),(o.x - position.x));
     }
     
     //==================================================================================================
@@ -89,7 +139,7 @@ public class GameObject {
         return depth;
     }*/
     //--------------------------------------------
-    
+
     /**
      * Sets the position of the object. Objects will be drawn with their center at this position
      *
@@ -98,6 +148,38 @@ public class GameObject {
     public void setPosition(Point2D.Float p) {
         position.x = p.x;
         position.y = p.y;
+    }
+    
+    /**
+     * Sets the position of the object. Objects will be drawn with their center at this position
+     *
+     * @param x x position of the object
+     * @param y y position of the object
+     */
+    public void setPosition(float x, float y) {
+        position.x = x;
+        position.y = y;
+    }
+    
+    /**
+     * Sets the position of the object. Objects will be drawn with their center at this position
+     *
+     * @param p Position of the object
+     */
+    public void incrementPosition(Point2D.Float p) {
+        position.x += p.x;
+        position.y += p.y;
+    }
+    
+    /**
+     * Sets the position of the object. Objects will be drawn with their center at this position
+     *
+     * @param x x position of the object
+     * @param y y position of the object
+     */
+    public void incrementPosition(float x, float y) {
+        position.x += x;
+        position.y += y;
     }
     
     /**
@@ -129,11 +211,11 @@ public class GameObject {
      }
     
     private Point2D.Float getCurrentCenter() {
-        return center.elementAt(activeTexture);
+        return centers.elementAt(activeTexture);
     }
     
     public GameTexture getCurrentTexture() {
-        return texture.elementAt(activeTexture);
+        return textures.elementAt(activeTexture);
     }
     
     //==================================================================================================
@@ -177,10 +259,10 @@ public class GameObject {
      * @param centerY The center of the image in the y direction relative to the image
      */
     public void addTexture(GameTexture t, float centerX, float centerY) {
-        texture.add(t);
-        center.add(new Point2D.Float(centerX, centerY));
+        textures.add(t);
+        centers.add(new Point2D.Float(centerX, centerY));
         
-        if (texture.size() == 1) // i.e. textures was empty before calling
+        if (textures.size() == 1) // i.e. textures was empty before calling
             setActiveTexture(0);
         
         
@@ -192,8 +274,8 @@ public class GameObject {
      * @param index index of the texture to remove
      */
     public void removeTexture(int index) {
-        texture.remove(index);
-        center.remove(index);
+        textures.remove(index);
+        centers.remove(index);
         
         if (activeTexture == index)
             setActiveTexture(index);
@@ -205,7 +287,7 @@ public class GameObject {
      * @return Number of textures
      */
     public int getNumberOfTextures() {
-        return texture.size();
+        return textures.size();
     }
     
     //==================================================================================================
@@ -216,11 +298,11 @@ public class GameObject {
     * @param i The index of which texture should be set to as active
     */
     public void setActiveTexture(int i) {
-        if (texture.size() == 0){
+        if (textures.size() == 0){
             activeTexture = -1;
             return;
         }
-        activeTexture = i%texture.size();
+        activeTexture = i%textures.size();
         
         setTextureCoords();
     }

@@ -1,8 +1,9 @@
-package game;
+package GameEngine;
 
 import java.awt.event.*;
 
-class GameInterface implements KeyListener, MouseListener, MouseMotionListener, MouseWheelListener
+
+class GameInterface implements KeyListener, MouseListener, MouseMotionListener, MouseWheelListener 
 {
     protected Game game;
     
@@ -63,6 +64,7 @@ class GameInterface implements KeyListener, MouseListener, MouseMotionListener, 
         game.registerUnitsToScroll(e.getUnitsToScroll());
         game.registerWheelRotation(e.getWheelRotation());
     }
-    
+	
     //------------------------------------------
+    
 }

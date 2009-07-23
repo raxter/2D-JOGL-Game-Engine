@@ -1,4 +1,4 @@
-package game;
+package GameEngine;
 
 import com.sun.opengl.util.texture.*;
 import java.nio.*;
