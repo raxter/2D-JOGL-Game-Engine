@@ -12,7 +12,7 @@ make all
 cd ..
 
 echo Copying to output/$1"_"$2/
-mkdir output/$1"_"$2
+#mkdir output/$1"_"$2
 cp -r common_files/* output/$1"_"$2/
 rm -r output/$1"_"$2/Makefile
 cp -r "OS_specific_files/"$2/* output/$1"_"$2/
@@ -20,7 +20,7 @@ rm -r output/$1"_"$2/src/2DGame/
 cp -r games_src/$1/* output/$1"_"$2/src/
 
 #echo python create_project_files.py "OS_specific_files"$2 $1 output/$1"_"$2/
-python create_project_files.py "OS_specific_files"$2 $1 output/$1"_"$2/
+python create_project_files.py $2 $1 output/$1"_"$2/
 
 #echo Copying to output/$1"_windows"
 #mkdir output/$1"_windows"

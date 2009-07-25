@@ -22,6 +22,9 @@ bytecode:
 #	$(ENV) $(JAVACMD) src/*.java
 	
 clean_all: clean_docs clean_jar clean_bytecode
+	rm *~
+	rm */*~
+	rm */*/*~
 	
 clean_jar:
 	rm -rf jar/

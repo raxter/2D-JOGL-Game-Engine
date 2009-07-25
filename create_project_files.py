@@ -11,14 +11,14 @@ classpfile.write ('\
 <classpath> \n\
 	<classpathentry kind="src" path="src"/> \n\
 	<classpathentry kind="lib" path="jar/2DGame_1.2.jar"/> \n\
-	<classpathentry kind="lib" path="libs/jogl-1.1.1-'+os+'-i586/lib/gluegen-rt.jar"> \n\
+	<classpathentry kind="lib" path="libs/jogl-1.1.1-'+os+'/lib/gluegen-rt.jar"> \n\
 		<attributes> \n\
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="'+game_name+'/libs/jogl-1.1.1-'+os+'-i586/lib"/> \n\
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="'+game_name+'/libs/jogl-1.1.1-'+os+'/lib"/> \n\
 		</attributes> \n\
 	</classpathentry> \n\
-	<classpathentry kind="lib" path="libs/jogl-1.1.1-'+os+'-i586/lib/jogl.jar"> \n\
+	<classpathentry kind="lib" path="libs/jogl-1.1.1-'+os+'/lib/jogl.jar"> \n\
 		<attributes> \n\
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="'+game_name+'/libs/jogl-1.1.1-'+os+'-i586/lib"/> \n\
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="'+game_name+'/libs/jogl-1.1.1-'+os+'/lib"/> \n\
 		</attributes> \n\
 	</classpathentry> \n\
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/> \n\
