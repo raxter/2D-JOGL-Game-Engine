@@ -13,6 +13,8 @@ How to play
 This is just a toy game, there is no winning conditions. If you shoot something that is not a wall it'll be destroyed.
 You have to restart the game to restart. You are obviously required to change it (see the specifications on Vula)
 
+NOTE: Sometimes the game creates you on top of an asteroid. In this case you will not be able to move. Restart that game. You need to adress this in your final game.
+
 Controls:
 
 UP, DOWN, LEFT, RIGHT - move
@@ -29,7 +31,7 @@ You can use an IDE (Eclipse, soon to be NetBeans and JCreator as well) or you ca
 Please you have the correct version of the API depending on your Operating System. The only difference is the Eclipse .classpath file and the "jogl-1.1.1-linux-i586/" and "jogl-1.1.1-windows-i586/" folders that contain the Operating System specific libraries
 
 ------------------------------------------------------------------------------
-Eclipse:
+Eclipse 3.5 (Galileo):
 ------------------------------------------------------------------------------
 
 Extract these file to the desired directory
@@ -55,6 +57,26 @@ Click OK (and yes if it prompts you)
 From here on it should be working and you can run it as per normal for Eclipse Java applications
 
 Again, post on the forums if you have a problem. Please be sure to specify exactly what is wrong and provide any relevant information that I might need.
+
+
+------------------------------------------------------------------------------
+NetBeans 6.7:
+------------------------------------------------------------------------------
+
+Extract these file to the desired directory
+Open NetBeans
+Click File->Import Project->Eclipse Project...
+Click the "Import Project ignoring Project Dependencies" radio button
+For "Project to Import:" choose the directory where you extracted the files to for the 
+For "Destination Folder:" choose the directory where you want your project
+Click Finish
+You should see the "SurvivalGame" project on the left now.
+Right click on it and click "Properties"
+Click on the "Run" tab on the left
+In the textfield next to "VM Options" enter in ????
+Click "OK" and you are ready to build and run
+
+
 
 ------------------------------------------------------------------------------
 Command Line (Linux  only):

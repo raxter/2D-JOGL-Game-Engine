@@ -717,7 +717,7 @@ public abstract class Game {
     //==============================================================================
     
     /**
-    Returns the bounding box of the specified string with the given font (described by a GameFont object).
+    * Returns the bounding box of the specified string with the given font (described by a GameFont object).
     * The Rectangle2D's position is at the origin.
     * @param str The string
     * @param gf The GameFont that holds the specified font
@@ -736,6 +736,11 @@ public abstract class Game {
     	this.viewPortDimension = new Dimension(dimension);
     }
 
+  /**
+  * Returns the dimentions of the viewport the game is in.
+  * The Rectangle2D's position is at the origin.
+  * @return Dimention of the viewport
+  */
 	public Dimension getViewportDimension() {
 		
 		return new Dimension(viewPortDimension);

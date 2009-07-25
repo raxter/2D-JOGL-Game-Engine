@@ -1,5 +1,5 @@
-LIBCLASSFILES="`pwd`/../linux_files/libs/jogl-1.1.1-linux-i586/lib/jogl.jar":"`pwd`/../linux_files/libs/jogl-1.1.1-linux-i586/lib/gluegen-rt.jar"
-ENV=LD_LIBRARY_PATH="`pwd`/../linux_files/libs/jogl-1.1.1-linux-i586/lib/" CLASSPATH="`pwd`/jar/2DGame_1.2.jar":$(LIBCLASSFILES)
+LIBCLASSFILES="`pwd`/../OS_specific_files/linux-i586/libs/jogl-1.1.1-linux-i586/lib/jogl.jar":"`pwd`/../OS_specific_files/linux-i586/libs/jogl-1.1.1-linux-i586/lib/gluegen-rt.jar"
+ENV=LD_LIBRARY_PATH="`pwd`/../OS_specific_files/linux-i586/libs/jogl-1.1.1-linux-i586/lib/" CLASSPATH="`pwd`/jar/2DGame_1.2.jar":$(LIBCLASSFILES)
 JAVACMD=javac
 
 JAR_FILE=2DGame_1.2.jar

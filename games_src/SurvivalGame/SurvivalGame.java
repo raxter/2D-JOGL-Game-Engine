@@ -68,12 +68,28 @@ public class SurvivalGame extends Game
         
 
         //Loading up our textures
+        GameTexture softRockTexture = loader.loadTexture("Textures/soft_rock.png");
         GameTexture rockTexture = loader.loadTexture("Textures/rock.png");
         GameTexture grassTexture = loader.load("Textures/grass_tile.jpg");
         bulletTexture = loader.loadTexture("Textures/bullet.png");
         
         
         int gridSize = 25;
+        
+        
+        // creating some random rocks to shoot
+        for (int i = 0 ; i < 32 ; i++ ) {
+          
+          float x = (float) ((Math.random()*(gridSize-4)+2)*grassTexture.getWidth());
+          float y = (float) ((Math.random()*(gridSize-4)+2)*grassTexture.getHeight());
+          
+    		  GameObject go = new GameObject(x, y);
+    		  go.addTexture(softRockTexture, 0, 0);
+    		  objects.add(go);
+        }
+        
+        
+        // creating the floor objects
         gridTile = new GameObject[gridSize][gridSize];
         for (int i = 0 ; i < gridSize ; i++ ) {
         	for (int j = 0 ; j < gridSize ; j++ ) {
@@ -84,7 +100,6 @@ public class SurvivalGame extends Game
         
         
         // Creating wall objects
-
         for (int i = 0 ; i < grassTexture.getWidth()*gridSize ; i += rockTexture.getWidth()) {
     		WallObject go = new WallObject(i, 0);
     		go.addTexture(rockTexture, 0, 0);
