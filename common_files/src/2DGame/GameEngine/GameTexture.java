@@ -17,7 +17,7 @@ public class GameTexture {
     int w, h;
     ByteBuffer bbuffer;
     
-    GameTexture() {}
+    protected GameTexture() {}
 
     /** Disposes the texture in the proper GL fashion. This should be called automatically upon cleanup of the java program and need not be called directly.
     */
