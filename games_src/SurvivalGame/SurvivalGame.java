@@ -74,11 +74,11 @@ public class SurvivalGame extends Game
         bulletTexture = loader.loadTexture("Textures/bullet.png");
         
         
-        int gridSize = 25;
+        int gridSize = 12;
         
         
         // creating some random rocks to shoot
-        for (int i = 0 ; i < 32 ; i++ ) {
+        for (int i = 0 ; i < 8 ; i++ ) {
           
           float x = (float) ((Math.random()*(gridSize-4)+2)*grassTexture.getWidth());
           float y = (float) ((Math.random()*(gridSize-4)+2)*grassTexture.getHeight());

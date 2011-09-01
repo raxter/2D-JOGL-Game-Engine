@@ -2,6 +2,7 @@
 
 # create_API GameName OS
 
+mkdir output
 rm -rf output/$1"_"$2/
 mkdir output/$1"_"$2/
 #rm -rf $1"_linux/"/

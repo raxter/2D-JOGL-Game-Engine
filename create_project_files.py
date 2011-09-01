@@ -1,5 +1,7 @@
 import sys
 
+print 'Creating project files'
+
 os = sys.argv[1]
 game_name = sys.argv[2]
 dest_dir = sys.argv[3]

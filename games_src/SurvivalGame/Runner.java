@@ -14,7 +14,7 @@ public class Runner {
         frame.add(glc);
         
         frame.setResizable(false);
-        frame.setSize(1024, 768);
+        frame.setSize(800, 600);
         frame.setVisible(true);
         
         // need this so that you don't have to click on the window to gain focus ;)
